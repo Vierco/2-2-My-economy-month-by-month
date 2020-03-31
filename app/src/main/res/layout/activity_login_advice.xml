@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical"
+    tools:context=".LoginAdvice">
+
+    <TextView
+        android:id="@+id/tv_mounth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:fontFamily="@font/lato_black"
+        android:textColor="@color/letter_high_emphasis"
+        android:textSize="@dimen/letters_gigantic"
+        android:text="@string/numers_dont_matter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/letter_high_emphasis"
+        android:textSize="@dimen/letters_big"
+        android:text="@string/to_nobody" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/letter_medium_emphasis"
+        android:textSize="@dimen/letters_medium"
+        android:text="@string/no_personal_dates" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Home">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:background="@color/primary"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            app:contentScrim="?attr/colorPrimary">
+
+            <TextView
+                android:id="@+id/tv_mounth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/lato_black"
+                android:textColor="@color/letter_high_emphasis"
+                android:textSize="@dimen/letters_gigantic"
+                tools:text="Febrero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/text_margin"
+            android:orientation="horizontal"
+            android:background="@color/primary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/letter_high_emphasis"
+                android:textSize="@dimen/letters_medium"
+                android:text="@string/outstanding" />
+
+            <TextView
+                android:paddingStart="@dimen/between_letters"
+                android:id="@+id/tv_outstanding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/primary_dark"
+                android:textSize="@dimen/letters_medium"
+                android:text="@string/zero" />
+
+            <TextView
+                android:paddingStart="@dimen/between_letters"
+                android:id="@+id/tv_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/primary_dark"
+                android:textSize="@dimen/letters_medium"
+                android:text="@string/badge"/>
+
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:orientation="horizontal"
+                android:background="@color/primary">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/letter_high_emphasis"
+                    android:textSize="@dimen/letters_medium"
+                    android:text="@string/in_the_bank" />
+
+                <TextView
+                    android:paddingStart="@dimen/between_letters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/letters_medium"
+                    android:text="@string/_not_set"/>
+
+                <TextView
+                    android:paddingStart="@dimen/between_letters"
+                    android:id="@+id/tv_in_bank"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="@dimen/letters_medium"
+                    tools:text="$" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_home" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@color/primary_dark"
+        app:backgroundTint="@color/primary"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_marginx2"
+        android:tint="@color/disabled_view"
+        app:backgroundTint="@color/primary"
+        app:maxImageSize="@dimen/fab_complete_icon"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="top|end"
+        app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

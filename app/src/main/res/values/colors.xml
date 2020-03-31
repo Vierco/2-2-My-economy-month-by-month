@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DA05</color>
+
+    <color name="primary">#ffffff</color>
+    <color name="primary_dark">#0336ff</color>
+    <color name="letter_high_emphasis">#de000000</color>
+    <color name="letter_medium_emphasis">#99000000</color>
+    <color name="letter_medium_disabled">#61000000</color>
+    <color name="orange">#FF6F00</color>
+    <color name="disabled_view">#E0E0E0</color>
+
+
+</resources>

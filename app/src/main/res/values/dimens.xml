@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="security_margin">6dp</dimen>
+    <dimen name="button_padding">8dp</dimen>
+    <dimen name="letters_gigantic">46sp</dimen>
+    <dimen name="letters_big">22sp</dimen>
+    <dimen name="letters_medium">17sp</dimen>
+    <dimen name="letters_small">14sp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_marginx2">32dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="between_letters">4dp</dimen>
+    <dimen name="fab_complete_icon">69dp</dimen>
+
+</resources>
