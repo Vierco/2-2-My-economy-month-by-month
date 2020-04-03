@@ -11,18 +11,18 @@
     <string name="st_tut4">¡Y ya está!\nSiempre sabrás cuanto te queda por pagar cada mes y cuanto para lo que tú quieras.</string>
     <string name="title_activity_home">Home</string>
 
-    <string name="mouth_enero">Enero</string>
-    <string name="mouth_febrero">Febrero</string>
-    <string name="mouth_marzo">Marzo</string>
-    <string name="mouth_abril">Abril</string>
-    <string name="mouth_mayo">Mayo</string>
-    <string name="mouth_junio">Junio</string>
-    <string name="mouth_julio">Julio</string>
-    <string name="mouth_agosto">Agosto</string>
-    <string name="mouth_septiembre">Septiembre</string>
-    <string name="mouth_octubre">Octubre</string>
-    <string name="mouth_noviembre">Noviembre</string>
-    <string name="mouth_diciembre">Diciembre</string>
+    <string name="mouth_jan">Enero</string>
+    <string name="mouth_feb">Febrero</string>
+    <string name="mouth_mar">Marzo</string>
+    <string name="mouth_apr">Abril</string>
+    <string name="mouth_may">Mayo</string>
+    <string name="mouth_jun">Junio</string>
+    <string name="mouth_jul">Julio</string>
+    <string name="mouth_aug">Agosto</string>
+    <string name="mouth_sep">Septiembre</string>
+    <string name="mouth_oct">Octubre</string>
+    <string name="mouth_nov">Noviembre</string>
+    <string name="mouth_dec">Diciembre</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -123,6 +123,18 @@
     <string name="numers_dont_matter">Porque no nos interesan tus números…</string>
     <string name="to_nobody">Ni a nosotros, ni a nadie que no seas tú.</string>
     <string name="no_personal_dates">Por este motivo, en esta aplicación no te vamos a pedir ningún dato personal, ni emails, ni teléfono, ni siquiera tu nombre.\n\nÚnicamente eligirás un nombre de usuario, el que quieras, y tus gastos quedarán anonimaménte relacionado a ese usuario.\n!Ojo! No pierdas el nombre elegido.\n\nSi más adelante, te gusta la app y quieres un sistema de recuperación en caso de pérdida, ya te comentaremos algo.</string>
+    <string name="chooseId">¿Cuál va a ser tu usuario?</string>
+    <string name="userHint">Mi usuario</string>
+    <string name="rememberId">Recuerda conservarlo</string>
+    <string name="repeat_id">Confirma el usuario</string>
+    <string name="comeon">Continuar</string>
+    <string name="fields_not_match">Los campos no coinciden</string>
+    <string name="accept">Aceptar</string>
+    <string name="isAlreadyInUse">Este nombre de usuario ya está siendo utilizado</string>
+
+
+    <string name="db_unknown_email">unknown_email</string>
+    <string name="connection_error">Oops... error de conexión</string>
 
 
 </resources>

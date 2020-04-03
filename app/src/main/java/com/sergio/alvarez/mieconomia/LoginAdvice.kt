@@ -1,12 +1,26 @@
 package com.sergio.alvarez.mieconomia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sergio.alvarez.mieconomia.databinding.ActivityLoginAdviceBinding
+import kotlinx.android.synthetic.main.activity_login_advice.*
 
 class LoginAdvice : AppCompatActivity() {
 
+    private lateinit var vb: ActivityLoginAdviceBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_advice)
+        vb = ActivityLoginAdviceBinding.inflate(layoutInflater)
+        setContentView(vb.root)
+
+        bt_ok.setOnClickListener() {
+            val intent = Intent(this,SetId::class.java)
+            startActivity(intent)
+            onPause()
+        }
+
+
     }
 }

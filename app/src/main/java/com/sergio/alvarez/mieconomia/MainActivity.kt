@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.sergio.alvarez.mieconomia.PreferenceHelper.customPreference
 import com.sergio.alvarez.mieconomia.PreferenceHelper.firstRun
+import com.sergio.alvarez.mieconomia.PreferenceHelper.visitorCounter
 import com.sergio.alvarez.mieconomia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -49,7 +50,9 @@ class MainActivity : AppCompatActivity() {
 
         val prefs = customPreference(this, CUSTOM_PREF_NAME)
 
-//        Log.i("2134","primera? ${prefs.firstRun}");
+        val openNumber = prefs.visitorCounter
+
+        Log.i("2134","Número: $openNumber")
 
         if (!prefs.firstRun){
             cambioAhome()

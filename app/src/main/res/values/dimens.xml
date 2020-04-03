@@ -16,5 +16,6 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="between_letters">4dp</dimen>
     <dimen name="fab_complete_icon">69dp</dimen>
+    <dimen name="OutLinedBoxCorners">20dp</dimen>
 
 </resources>
