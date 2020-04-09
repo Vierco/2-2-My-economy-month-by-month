@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/standard_margin"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/to_nobody"
             android:textColor="@color/letter_high_emphasis"
@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/standard_margin"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/no_personal_dates"
             android:textColor="@color/letter_medium_emphasis"

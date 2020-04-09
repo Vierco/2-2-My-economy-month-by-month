@@ -1,34 +1,66 @@
 package com.sergio.alvarez.mieconomia
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.*
-import com.sergio.alvarez.mieconomia.ShowToast.toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.sergio.alvarez.mieconomia.GlobalVar.Companion.database
+import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
+import com.sergio.alvarez.mieconomia.GolbalFun.Companion.getRandomString
+import com.sergio.alvarez.mieconomia.GolbalFun.Companion.low
+import com.sergio.alvarez.mieconomia.Messages.toast
+import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
 import com.sergio.alvarez.mieconomia.databinding.ActivitySetIdBinding
-import java.util.*
+import com.sergio.alvarez.model.User
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 
 class SetId : AppCompatActivity() {
 
     private lateinit var vb: ActivitySetIdBinding
-
-    private lateinit var database: DatabaseReference
-
     private lateinit var name: String
 
+
+    private fun goToHome() {
+        val intent = Intent(this, Home::class.java)
+        startActivity(intent)
+        finish()
+
+    }
+
+
+    private fun getDate(): String =
+        LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))
+            .toString()
+
+    private fun getMilliseconds(): Long = System.currentTimeMillis()
 
     private fun checkUserInDataBase() {
 
         database.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post: Any? = dataSnapshot.child("users").child(name).value
+
+                val nameToLowerCase = low(name)
+
+                val post: Any? = dataSnapshot.child("users").child(nameToLowerCase).value
 
                 if (post != null) {
                     toast(resources.getString(R.string.isAlreadyInUse))
                 } else {
-                    database.child("users").child(name).child("mail")
-                        .setValue(resources.getString(R.string.db_unknown_email))
-                    // TODO cambio de actividad
+
+                    prefs.user_id = name
+
+                    val user = User(name, getDate(), getMilliseconds(), getRandomString(20))
+
+                    database.child("users").child(nameToLowerCase).setValue(user)
+
+                    goToHome()
+                    finishAffinity()
+
                 }
 
             }
@@ -47,18 +79,28 @@ class SetId : AppCompatActivity() {
         vb = ActivitySetIdBinding.inflate(layoutInflater)
         setContentView(vb.root)
 
-        database = FirebaseDatabase.getInstance().reference
 
         vb.btAccept.setOnClickListener {
 
-            name = vb.fieldInputId.text.toString().toLowerCase(Locale.ROOT)
-            val idConfirmation = vb.fieldConfirmId.text.toString().toLowerCase(Locale.ROOT)
+            name = vb.fieldInputId.text.toString()
+            val idConfirmation = vb.fieldConfirmId.text.toString()
 
-            if (name != idConfirmation) {
-                toast(resources.getString(R.string.fields_not_match))
+            if (name.isEmpty() || idConfirmation.isEmpty()) {
+                toast(resources.getString(R.string.some_empty_field))
+
             } else {
-                checkUserInDataBase()
+
+                if (name.equals(idConfirmation, ignoreCase = true)) {
+                    checkUserInDataBase()
+                } else {
+                    toast(resources.getString(R.string.fields_not_match))
+                }
+
             }
+        }
+
+        vb.logIn.setOnClickListener {
+            toast(resources.getString(R.string.feature_to_do))
         }
 
     }

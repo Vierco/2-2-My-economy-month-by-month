@@ -10,7 +10,6 @@
     tools:context=".SetId">
 
     <TextView
-        android:id="@+id/tv_mounth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
@@ -25,8 +24,8 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginEnd="@dimen/standard_margin"
         android:focusedByDefault="false"
         android:enabled="true"
         android:hint="@string/userHint"
@@ -60,10 +59,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/standard_margin"
         android:focusedByDefault="false"
-        android:layout_marginTop="@dimen/fab_marginx2"
-        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/standard_marginx2"
+        android:layout_marginEnd="@dimen/standard_margin"
         android:enabled="true"
         android:hint="@string/repeat_id"
         android:textColor="@color/letter_medium_emphasis"
@@ -87,43 +86,48 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/between_letters"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/do_you_have_account"
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+        <TextView
+            android:id="@+id/logIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/log_in"
+            android:textColor="@color/primary_dark"
+            android:textSize="@dimen/letters_small" />
+
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/bt_accept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/fab_marginx2"
+        android:layout_marginTop="@dimen/standard_marginx2"
         android:elevation="2dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/accept"
-        android:textColor="@color/primary"
-        app:backgroundTint="@color/primary_dark"
-        app:rippleColor="@color/rollover" />
-
-    <Button
-        android:id="@+id/test_db"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/fab_marginx2"
-        android:elevation="2dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Test DB"
-        android:textColor="@color/primary"
-        app:backgroundTint="@color/primary_dark"
-        app:rippleColor="@color/rollover" />
-
-
-    <Button
-        android:id="@+id/test_db2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/fab_marginx2"
-        android:elevation="2dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Test DB 2"
         android:textColor="@color/primary"
         app:backgroundTint="@color/primary_dark"
         app:rippleColor="@color/rollover" />

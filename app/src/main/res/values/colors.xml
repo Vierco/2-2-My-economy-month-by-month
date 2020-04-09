@@ -12,6 +12,8 @@
     <color name="orange">#FF6F00</color>
     <color name="disabled_view">#E0E0E0</color>
     <color name="rollover">#1565C0</color>
+    <color name="dark_grey">#9d9d9d</color>
+    <color name="red">#B71C1C</color>
 
 
 </resources>

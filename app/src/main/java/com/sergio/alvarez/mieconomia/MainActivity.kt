@@ -2,19 +2,16 @@ package com.sergio.alvarez.mieconomia
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.sergio.alvarez.mieconomia.PreferenceHelper.customPreference
+import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
 import com.sergio.alvarez.mieconomia.PreferenceHelper.firstRun
-import com.sergio.alvarez.mieconomia.PreferenceHelper.visitorCounter
 import com.sergio.alvarez.mieconomia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var vb: ActivityMainBinding
 
-    val CUSTOM_PREF_NAME = "App_data"
 
     private fun cambioAhome() {
         val intent = Intent(this, Home::class.java)
@@ -43,26 +40,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        vb = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(vb.root)
-
-        val prefs = customPreference(this, CUSTOM_PREF_NAME)
-
-        val openNumber = prefs.visitorCounter
-
-        Log.i("2134","Número: $openNumber")
+    private fun openingChecks() {
 
         if (!prefs.firstRun){
             cambioAhome()
         }
 
+    }
 
-        vb.btNext.setOnClickListener() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        vb = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(vb.root)
 
 
-            if (vb.btNext.text.equals(resources.getString(R.string.st_start))) {
+        openingChecks()
+
+        vb.btNext.setOnClickListener {
+
+
+            if (vb.btNext.text == resources.getString(R.string.st_start)) {
 
                 prefs.firstRun = false
 
@@ -71,13 +68,13 @@ class MainActivity : AppCompatActivity() {
             } else {
 
                 vb.viewFlipper.setInAnimation(
-                    getApplicationContext(),
+                    App.applicationContext(),
                     R.anim.view_flipper_slide_in_right
-                );
+                )
                 vb.viewFlipper.setOutAnimation(
-                    getApplicationContext(),
+                    App.applicationContext(),
                     R.anim.view_flipper_slide_out_left
-                );
+                )
                 vb.viewFlipper.showNext()
                 checkVisibilities()
 
@@ -85,9 +82,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        vb.btPrev.setOnClickListener() {
-            vb.viewFlipper.setInAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-            vb.viewFlipper.setOutAnimation(getApplicationContext(), android.R.anim.slide_out_right);
+        vb.btPrev.setOnClickListener {
+            vb.viewFlipper.setInAnimation(App.applicationContext(), android.R.anim.slide_in_left)
+            vb.viewFlipper.setOutAnimation(App.applicationContext(), android.R.anim.slide_out_right)
             vb.viewFlipper.showPrevious()
             checkVisibilities()
 

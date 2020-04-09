@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mi economia</string>
+    <string name="app_name">My economy</string>
 
     <!-- Buttons -->
     <string name="st_prev">Anterior</string>
@@ -23,6 +23,8 @@
     <string name="mouth_oct">Octubre</string>
     <string name="mouth_nov">Noviembre</string>
     <string name="mouth_dec">Diciembre</string>
+
+    <string name="custom_pref_name">App_data</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -125,6 +127,7 @@
     <string name="no_personal_dates">Por este motivo, en esta aplicación no te vamos a pedir ningún dato personal, ni emails, ni teléfono, ni siquiera tu nombre.\n\nÚnicamente eligirás un nombre de usuario, el que quieras, y tus gastos quedarán anonimaménte relacionado a ese usuario.\n!Ojo! No pierdas el nombre elegido.\n\nSi más adelante, te gusta la app y quieres un sistema de recuperación en caso de pérdida, ya te comentaremos algo.</string>
     <string name="chooseId">¿Cuál va a ser tu usuario?</string>
     <string name="userHint">Mi usuario</string>
+    <string name="emailHint">Mi email</string>
     <string name="rememberId">Recuerda conservarlo</string>
     <string name="repeat_id">Confirma el usuario</string>
     <string name="comeon">Continuar</string>
@@ -135,6 +138,20 @@
 
     <string name="db_unknown_email">unknown_email</string>
     <string name="connection_error">Oops... error de conexión</string>
+    <string name="hello_again">Hola de nuevo…</string>
+    <string name="nice_to_see_u">Nos alegra ver que vienes por aquí de vez en cuando.</string>
+    <string name="wanna_set_email">Tal como te comentamos al principio, si te gusta Mi Economía para Dummies, te damos la opción de que asocies a tu usuario tu correo electrónico por si olvidas el usuario o no puedes recuerperarlo por algún motivo.\nen caso de no querer, siempre tendfrás esta opción disponible en el menú de configuración.\n¡Gracias!</string>
+    <string name="no_thanks">No, gracias</string>
+    <string name="send">Enviar</string>
+    <string name="invalid_email_format">Formato incorrecto</string>
+    <string name="unknow">Desconocido</string>
+    <string name="email_field_empty">El campo email está vacio</string>
+    <string name="openingToSet">3</string>
+    <string name="some_empty_field">Hay algún campo vacio</string>
+    <string name="ramdon_chars">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890</string>
+    <string name="do_you_have_account">¿Ya tienes cuenta?</string>
+    <string name="log_in">Inicia sesión</string>
+    <string name="feature_to_do">Feature to do</string>
 
 
 </resources>

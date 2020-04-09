@@ -6,12 +6,15 @@ import androidx.preference.PreferenceManager
 
 object PreferenceHelper {
 
-    val PRIMERA_EJECUCION = "PRIMERA_EJECUCION"
-    val VISITOR_COUNTER = "VISITOR_COUNTER"
+    private const val FIRST_RUN = "FIRST_RUN"
+    private const val OPENING_COUNTER = "OPENING_COUNTER"
+    private const val USER_ID = "VISITOR_COUNTER"
 
-    fun defaultPreference(context: Context): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    fun defaultPreference(context: Context): SharedPreferences =
+        PreferenceManager.getDefaultSharedPreferences(context)
 
-    fun customPreference(context: Context, name: String): SharedPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE)
+    fun customPreference(context: Context, name: String): SharedPreferences =
+        context.getSharedPreferences(name, Context.MODE_PRIVATE)
 
     inline fun SharedPreferences.editMe(operation: (SharedPreferences.Editor) -> Unit) {
         val editMe = edit()
@@ -19,7 +22,7 @@ object PreferenceHelper {
         editMe.apply()
     }
 
-    inline fun SharedPreferences.Editor.put(pair:Pair<String, Any>) {
+    inline fun SharedPreferences.Editor.put(pair: Pair<String, Any>) {
         val key = pair.first
         val value = pair.second
         when (value) {
@@ -33,18 +36,27 @@ object PreferenceHelper {
     }
 
     var SharedPreferences.firstRun
-        get() = getBoolean(PRIMERA_EJECUCION, true)
+        get() = getBoolean(FIRST_RUN, true)
         set(value) {
             editMe {
-                it.putBoolean(PRIMERA_EJECUCION, value)
+                it.putBoolean(FIRST_RUN, value)
             }
         }
 
-    var SharedPreferences.visitorCounter
-        get() = getInt(VISITOR_COUNTER, 0)
+
+    var SharedPreferences.user_id
+        get() = getString(USER_ID, App.applicationContext().getString(R.string.unknow))
         set(value) {
             editMe {
-                it.putInt(VISITOR_COUNTER, value)
+                it.putString(USER_ID, value)
+            }
+        }
+
+    var SharedPreferences.openingCounter
+        get() = getInt(OPENING_COUNTER, 0)
+        set(value) {
+            editMe {
+                it.putInt(OPENING_COUNTER, value)
             }
         }
 

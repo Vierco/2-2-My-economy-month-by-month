@@ -1,6 +1,9 @@
 package com.sergio.alvarez.mieconomia
 
-class Months {
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+
+class GlobalVar {
 
     companion object {
 
@@ -18,6 +21,14 @@ class Months {
             11 to App.resourses.getString(R.string.mouth_nov),
             12 to App.resourses.getString(R.string.mouth_dec)
         )
+
+        const val tag = "tag2134"
+
+        private val CUSTOM_PREF_NAME = App.resourses.getString(R.string.custom_pref_name)
+
+        val prefs = PreferenceHelper.customPreference(App.applicationContext(), CUSTOM_PREF_NAME)
+
+        val database: DatabaseReference = FirebaseDatabase.getInstance().reference
 
     }
 }
