@@ -1,3 +1,5 @@
+![Cover](https://sergioalvarez.dev/github/cover.png)
+
 # My economy for dummies
 
 This is a project of [Sergio Álvarez - Vierco](https://www.sergioalvarez.dev)
