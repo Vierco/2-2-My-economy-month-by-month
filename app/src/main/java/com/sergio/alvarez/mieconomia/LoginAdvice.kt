@@ -16,8 +16,7 @@ class LoginAdvice : AppCompatActivity() {
         setContentView(vb.root)
 
         bt_ok.setOnClickListener {
-            val intent = Intent(this,SetId::class.java)
-            startActivity(intent)
+            startActivity<SetId>()
             onPause()
         }
 

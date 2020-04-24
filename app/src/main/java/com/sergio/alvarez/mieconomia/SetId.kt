@@ -8,9 +8,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.database
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.GolbalFun.Companion.getRandomString
-import com.sergio.alvarez.mieconomia.GolbalFun.Companion.low
-import com.sergio.alvarez.mieconomia.Messages.toast
 import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
 import com.sergio.alvarez.mieconomia.databinding.ActivitySetIdBinding
 import com.sergio.alvarez.model.User
@@ -26,8 +23,7 @@ class SetId : AppCompatActivity() {
 
 
     private fun goToHome() {
-        val intent = Intent(this, Home::class.java)
-        startActivity(intent)
+        startActivity<Home>()
         finish()
 
     }
@@ -56,7 +52,7 @@ class SetId : AppCompatActivity() {
 
                     val user = User(name, getDate(), getMilliseconds(), getRandomString(20))
 
-                    database.child("users").child(nameToLowerCase).setValue(user)
+                    database.child(resources.getString(R.string.word_user)).child(nameToLowerCase).setValue(user)
 
                     goToHome()
                     finishAffinity()

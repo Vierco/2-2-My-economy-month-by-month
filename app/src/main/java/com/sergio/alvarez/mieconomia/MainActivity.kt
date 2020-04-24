@@ -14,14 +14,12 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun cambioAhome() {
-        val intent = Intent(this, Home::class.java)
-        startActivity(intent)
+        startActivity<Home>()
         finish()
     }
 
     private fun cambioALogin() {
-        val intent = Intent(this, LoginAdvice::class.java)
-        startActivity(intent)
+        startActivity<LoginAdvice>()
         finish()
     }
 

@@ -4,139 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
     android:fitsSystemWindows="true"
     tools:context=".Home">
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="wrap_content"
         android:background="@color/primary"
         android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
 
-        <LinearLayout
-            android:id="@+id/toolbar_layout"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            android:orientation="vertical"
-            app:contentScrim="?attr/colorPrimary">
+            android:layout_height="180dp"
+            android:background="@color/primary">
 
-            <LinearLayout
+            <com.q42.android.scrollingimageview.ScrollingImageView
+                android:id="@+id/scrolling_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                app:speed="1dp"
+                app:src="@drawable/months_min" />
+
+
 
                 <TextView
-                    android:id="@+id/tv_mounth"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:id="@+id/tv_month"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/text_margin"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/lato_black"
-                    android:textColor="@color/letter_high_emphasis"
+                    android:textColor="@color/primary"
                     android:textSize="@dimen/letters_gigantic"
                     tools:text="Febrero" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/fabUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:tint="@color/letter_medium_emphasis"
+                    app:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_refresh_black_24dp" />
 
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/fabProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="top"
                     android:layout_marginEnd="@dimen/standard_margin"
-                    android:layout_gravity="center"
-                    android:tint="@color/dark_grey"
+                    android:tint="@color/letter_medium_emphasis"
                     app:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_settings_black_24dp"/>
+                    app:srcCompat="@drawable/ic_settings_black_24dp" />
+
+                </LinearLayout>
 
 
-            </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/text_margin"
-            android:layout_marginEnd="@dimen/text_margin"
-            android:orientation="horizontal"
-            android:background="@color/primary">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/letter_high_emphasis"
-                android:textSize="@dimen/letters_medium"
-                android:text="@string/outstanding" />
-
-            <TextView
-                android:paddingStart="@dimen/between_letters"
-                android:id="@+id/tv_outstanding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/primary_dark"
-                android:textSize="@dimen/letters_medium"
-                android:text="@string/zero" />
-
-            <TextView
-                android:paddingStart="@dimen/between_letters"
-                android:id="@+id/tv_badge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/primary_dark"
-                android:textSize="@dimen/letters_medium"
-                android:text="@string/badge"/>
-
-        </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/text_margin"
-                android:layout_marginEnd="@dimen/text_margin"
-                android:orientation="horizontal"
-                android:background="@color/primary">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/letter_high_emphasis"
-                    android:textSize="@dimen/letters_medium"
-                    android:text="@string/in_the_bank" />
-
-                <TextView
-                    android:paddingStart="@dimen/between_letters"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/orange"
-                    android:textSize="@dimen/letters_medium"
-                    android:text="@string/_not_set"/>
-
-                <TextView
-                    android:paddingStart="@dimen/between_letters"
-                    android:id="@+id/tv_in_bank"
-                    android:layout_width="wrap_content"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="@dimen/letters_medium"
-                    tools:text="$" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
+        </FrameLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_home" />
+
+    <include
+        android:id="@+id/includes"
+        layout="@layout/content_home" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -149,29 +95,5 @@
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-
-<!--    <androidx.appcompat.widget.AppCompatImageButton-->
-<!--        android:id="@+id/fabProfile"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="@dimen/fab_margin"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="@dimen/fab_marginx2"-->
-<!--        android:tint="@color/disabled_view"-->
-<!--        app:backgroundTint="@color/primary"-->
-<!--        app:srcCompat="@drawable/ic_account_circle_black_24dp"/>-->
-    <!--        app:layout_anchor="@id/app_bar"-->
-    <!--        app:layout_anchorGravity="top|end"-->
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/bt_settings"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="end|top"-->
-<!--        android:layout_marginTop="@dimen/fab_marginx2"-->
-<!--        android:layout_marginEnd="@dimen/fab_margin"-->
-<!--        android:tint="@color/letter_medium_disabled"-->
-<!--        app:srcCompat="@drawable/ic_settings_black_24dp" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

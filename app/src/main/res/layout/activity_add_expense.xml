@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:scrollbars="vertical"
+    android:layout_height="match_parent"
+    tools:context=".AddExpense">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.q42.android.scrollingimageview.ScrollingImageView
+                android:id="@+id/scrolling_background"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                app:speed="1dp"
+                app:src="@drawable/new_expanse" />
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/lato_black"
+                android:text="@string/new_expense"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/letters_gigantic" />
+        </FrameLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:focusedByDefault="false"
+                    android:enabled="true"
+                    android:hint="@string/concept"
+                    android:textColor="@color/letter_medium_emphasis"
+                    app:boxCornerRadiusBottomEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusBottomStart="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopStart="@dimen/OutLinedBoxCorners"
+                    app:boxStrokeColor="@color/letter_medium_emphasis"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="20"
+                    app:helperText="@string/expense_concept"
+                    app:helperTextEnabled="true"
+                    app:hintTextColor="@color/letter_medium_emphasis"
+                    app:startIconDrawable="@drawable/ic_assignment_black_24dp"
+                    app:startIconTint="@color/primary_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fieldInputConcept"
+                        android:layout_width="match_parent"
+                        android:maxLength="20"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:fontFamily="@font/poppins_medium" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Months ....................... -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/pay_months"
+                        android:textColor="@color/letter_medium_emphasis"
+                        android:textSize="@dimen/letters_small" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/select_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:buttonTint="@color/primary_dark"
+
+                        android:textColor="@color/letter_medium_emphasis"
+                        android:text="@string/all" />
+
+
+                </LinearLayout>
+
+
+                <include
+                    android:id="@+id/includes"
+                    layout="@layout/flex_months" />
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:focusedByDefault="false"
+                    android:enabled="true"
+                    android:hint="@string/expense_amount"
+                    android:textColor="@color/letter_medium_emphasis"
+                    app:boxCornerRadiusBottomEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusBottomStart="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopStart="@dimen/OutLinedBoxCorners"
+                    app:boxStrokeColor="@color/letter_medium_emphasis"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="8"
+                    app:hintTextColor="@color/letter_medium_emphasis"
+                    app:startIconDrawable="@drawable/ic_assignment_black_24dp"
+                    app:startIconTint="@color/primary_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fieldInputAmount"
+                        android:layout_width="match_parent"
+                        android:maxLength="20"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:inputType="numberDecimal"
+                        android:fontFamily="@font/poppins_medium" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:focusedByDefault="false"
+                    android:enabled="true"
+                    android:hint="@string/exp_payday"
+                    android:textColor="@color/letter_medium_emphasis"
+                    app:boxCornerRadiusBottomEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusBottomStart="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopStart="@dimen/OutLinedBoxCorners"
+                    app:boxStrokeColor="@color/letter_medium_emphasis"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="2"
+                    app:hintTextColor="@color/letter_medium_emphasis"
+                    app:startIconDrawable="@drawable/ic_today_black_24dp"
+                    app:startIconTint="@color/primary_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fieldInputPayDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:maxLength="2"
+                        android:inputType="number"
+                        android:fontFamily="@font/poppins_medium" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:focusedByDefault="false"
+                    android:enabled="true"
+                    android:hint="@string/exp_notes"
+                    android:textColor="@color/letter_medium_emphasis"
+                    app:boxCornerRadiusBottomEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusBottomStart="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopEnd="@dimen/OutLinedBoxCorners"
+                    app:boxCornerRadiusTopStart="@dimen/OutLinedBoxCorners"
+                    app:boxStrokeColor="@color/letter_medium_emphasis"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="50"
+                    app:hintTextColor="@color/letter_medium_emphasis"
+                    app:startIconDrawable="@drawable/ic_today_black_24dp"
+                    app:startIconTint="@color/primary_dark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fieldInputNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="50"
+                        android:inputType="text"
+                        android:fontFamily="@font/poppins_medium" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/bt_save"
+                    android:textColor="@color/primary"
+                    app:backgroundTint="@color/primary_dark"
+                    app:rippleColor="@color/rollover"
+                    android:elevation="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/save" />
+
+            </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -9,7 +9,7 @@ class App : Application() {
 
     companion object {
         lateinit var instance: Application
-        lateinit var resourses: Resources
+        lateinit var res: Resources
 
         fun applicationContext() : Context {
             return instance!!.applicationContext
@@ -21,7 +21,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        resourses = resources
+        res = resources
 
         val context: Context = App.applicationContext()
     }

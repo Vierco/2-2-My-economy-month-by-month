@@ -5,13 +5,14 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="security_margin">6dp</dimen>
-    <dimen name="letters_gigantic">46sp</dimen>
+    <dimen name="letters_gigantic">60sp</dimen>
     <dimen name="letters_big">22sp</dimen>
     <dimen name="letters_medium">17sp</dimen>
     <dimen name="letters_small">14sp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="standard_margin">16dp</dimen>
     <dimen name="standard_marginx2">32dp</dimen>
+    <dimen name="corners">20dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="between_letters">4dp</dimen>
     <dimen name="OutLinedBoxCorners">20dp</dimen>
