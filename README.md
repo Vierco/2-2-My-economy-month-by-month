@@ -1,4 +1,4 @@
-![Cover](https://sergioalvarez.dev/github/cover.png)
+![Cover](https://sergioalvarez.dev/github/cover22.png)
 
 # My economy for dummies
 
