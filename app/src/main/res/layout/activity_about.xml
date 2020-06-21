@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/standard_margin"
+    android:scrollbars="none"
+    tools:context=".About">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_coverimage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/slogan"
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/version"
+            android:textColor="@color/letter_medium_disabled"
+            android:textSize="@dimen/letters_small" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/security_margin"
+        android:layout_height="wrap_content"
+        android:elevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/Github"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:src="@drawable/ic_github" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/opensourcefun"
+                android:textColor="@color/letter_medium_emphasis"
+                android:textSize="@dimen/letters_small" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vierco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:src="@drawable/vierco" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/vierco"
+                android:textColor="@color/letter_medium_emphasis"
+                android:textSize="@dimen/letters_small" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/security_margin"
+            android:layout_height="wrap_content"
+            android:elevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/text_margin"
+                android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/graphic_retrib"
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+
+        <include
+            android:id="@+id/includes"
+            layout="@layout/graphic_retributions" />
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/security_margin"
+        android:layout_height="wrap_content"
+        android:elevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/text_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/libraries"
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+
+        <TextView
+            android:id="@+id/numberPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/text_margin"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/lib_number_picker"
+            android:textColor="@color/letter_medium_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+
+        <TextView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/text_margin"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/lib_scroll"
+            android:textColor="@color/letter_medium_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+
+        <TextView
+            android:id="@+id/custom_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/text_margin"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/lib_toggle"
+            android:textColor="@color/letter_medium_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/text_margin"
+            android:src="@drawable/ic_build_firebase" />
+
+
+        <TextView
+            android:id="@+id/license"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/text_margin"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/under_license"
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+        <Button
+            android:id="@+id/bt_accept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:elevation="2dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/accept"
+            android:textColor="@color/primary"
+            app:backgroundTint="@color/primary_dark"
+            app:rippleColor="@color/rollover" />
+
+
+    </LinearLayout>
+</ScrollView>

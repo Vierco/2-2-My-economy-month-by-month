@@ -13,16 +13,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DataTime"></activity>
-        <activity android:name=".AddExpense"></activity>
-        <activity android:name=".SetEmail" />
-        <activity android:name=".SetId" />
-        <activity android:name=".LoginAdvice" />
+        <activity android:name=".About"></activity>
+        <activity android:name=".Settings" />
+        <activity android:name=".Auth" />
+        <activity
+            android:name=".InsertAmountAccount"
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".ExpensesHandler"
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".ChooseImageForExpense"
+            android:theme="@style/AppTheme.Dialog" /> <!-- android:theme="@style/Theme.AppCompat.DayNight.Dialog" /> -->
+        <activity android:name=".DataTime" />
+        <activity android:name=".AddExpense" />
+        <activity android:name=".SetGuestId" />
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

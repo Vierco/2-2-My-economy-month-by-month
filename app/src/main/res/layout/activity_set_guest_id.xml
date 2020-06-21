@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/standard_margin"
+    tools:context=".SetGuestId">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/think" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:fontFamily="@font/lato_black"
+            android:gravity="center"
+            android:text="@string/guest_mode"
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/guest_warning"
+            android:textColor="@color/letter_medium_emphasis"
+            android:textSize="@dimen/letters_small" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:enabled="true"
+            android:focusedByDefault="false"
+            android:hint="@string/userHint"
+            android:textColor="@color/letter_medium_emphasis"
+            app:boxCornerRadiusBottomEnd="@dimen/OutLinedBoxCorners"
+            app:boxCornerRadiusBottomStart="@dimen/OutLinedBoxCorners"
+            app:boxCornerRadiusTopEnd="@dimen/OutLinedBoxCorners"
+            app:boxCornerRadiusTopStart="@dimen/OutLinedBoxCorners"
+            app:boxStrokeColor="@color/letter_medium_emphasis"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:helperText="@string/rememberId"
+            app:helperTextEnabled="true"
+            app:hintTextColor="@color/letter_medium_emphasis"
+            app:startIconDrawable="@drawable/ic_account_circle_black_24dp"
+            app:startIconTint="@color/primary_dark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fieldInputId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_marginx2"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:enabled="true"
+            android:focusedByDefault="false"
+            android:hint="@string/repeat_id"
+            android:textColor="@color/letter_medium_emphasis"
+            app:boxCornerRadiusBottomEnd="@dimen/OutLinedBoxCorners"
+            app:boxCornerRadiusBottomStart="@dimen/OutLinedBoxCorners"
+            app:boxCornerRadiusTopEnd="@dimen/OutLinedBoxCorners"
+            app:boxCornerRadiusTopStart="@dimen/OutLinedBoxCorners"
+            app:boxStrokeColor="@color/letter_medium_emphasis"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:hintTextColor="@color/letter_medium_emphasis"
+            app:startIconDrawable="@drawable/ic_account_circle_black_24dp"
+            app:startIconTint="@color/primary_dark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fieldConfirmId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_medium" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/bt_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/standard_marginx2"
+            android:elevation="2dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/accept"
+            android:textColor="@color/primary"
+            app:backgroundTint="@color/primary_dark"
+            app:rippleColor="@color/rollover" />
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="gone" />
+
+
+</FrameLayout>

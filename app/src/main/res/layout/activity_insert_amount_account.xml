@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="20dp"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:padding="@dimen/standard_margin"
+    android:layout_height="match_parent"
+    tools:context=".InsertAmountAccount">
+
+
+    <TextView
+        android:id="@+id/screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:fontFamily="@font/lato_black"
+        android:hint="@string/_0"
+        android:textColor="@color/letter_medium_emphasis"
+        android:textSize="@dimen/letters_big" />
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:gravity="center">
+
+       <Button
+           android:id="@+id/item1"
+           android:textColor="@color/primary"
+           android:tag="@string/_1"
+           android:onClick="clickOnNum"
+           android:text="@string/_1"
+           android:layout_marginEnd="@dimen/security_margin"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:backgroundTint="@color/primary_dark"/>
+
+       <Button
+           android:id="@+id/item2"
+           android:text="@string/_2"
+           android:tag="@string/_2"
+           android:onClick="clickOnNum"
+           android:textColor="@color/primary"
+           android:layout_width="wrap_content"
+           android:layout_marginEnd="@dimen/security_margin"
+           android:layout_height="wrap_content"
+           app:backgroundTint="@color/primary_dark"/>
+
+       <Button
+           android:id="@+id/item3"
+           android:text="@string/_3"
+           android:onClick="clickOnNum"
+           android:tag="@string/_3"
+           android:textColor="@color/primary"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:backgroundTint="@color/primary_dark"/>
+
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/item4"
+            android:textColor="@color/primary"
+            android:text="@string/_4"
+            android:tag="@string/_4"
+            android:onClick="clickOnNum"
+            android:layout_marginEnd="@dimen/security_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary_dark"/>
+
+        <Button
+            android:id="@+id/item5"
+            android:textColor="@color/primary"
+            android:text="@string/_5"
+            android:tag="@string/_5"
+            android:onClick="clickOnNum"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/security_margin"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary_dark"/>
+
+        <Button
+            android:id="@+id/item6"
+            android:text="@string/_6"
+            android:onClick="clickOnNum"
+            android:tag="@string/_6"
+            android:textColor="@color/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary_dark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/item7"
+            android:text="@string/_7"
+            android:textColor="@color/primary"
+            android:onClick="clickOnNum"
+            android:tag="@string/_7"
+            android:layout_marginEnd="@dimen/security_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary_dark"/>
+
+        <Button
+            android:id="@+id/item"
+            android:text="@string/_8"
+            android:textColor="@color/primary"
+            android:layout_width="wrap_content"
+            android:tag="@string/_8"
+            android:onClick="clickOnNum"
+            android:layout_marginEnd="@dimen/security_margin"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary_dark"/>
+
+        <Button
+            android:id="@+id/item9"
+            android:textColor="@color/primary"
+            android:text="@string/_9"
+            android:tag="@string/_9"
+            android:layout_width="wrap_content"
+            android:onClick="clickOnNum"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary_dark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/save"
+            android:textColor="@color/primary"
+            android:layout_marginEnd="@dimen/security_margin"
+            android:layout_width="wrap_content"
+            android:text="@string/okey"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/green"/>
+
+        <Button
+            android:id="@+id/zero"
+            android:text="@string/_0"
+            android:textColor="@color/primary"
+            android:layout_width="wrap_content"
+            android:onClick="clickOnNum"
+            android:tag="@string/_0"
+            android:layout_marginEnd="@dimen/security_margin"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary_dark"/>
+
+        <Button
+            android:id="@+id/delete"
+            android:textColor="@color/primary"
+            android:text="@string/delete"
+            android:tag="@string/delete"
+            android:layout_width="wrap_content"
+            app:backgroundTint="@color/orange"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

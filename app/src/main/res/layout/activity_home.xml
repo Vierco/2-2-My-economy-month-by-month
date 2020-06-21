@@ -32,26 +32,32 @@
                 app:src="@drawable/months_min" />
 
 
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/lato_black"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/letters_gigantic"
+                tools:text="Febrero" />
 
-                <TextView
-                    android:id="@+id/tv_month"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/text_margin"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/lato_black"
-                    android:textColor="@color/primary"
-                    android:textSize="@dimen/letters_gigantic"
-                    tools:text="Febrero" />
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="@dimen/standard_margin"
+                android:layout_width="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|end"
-                    android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/fabUpdate"
+                    android:id="@+id/update"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
@@ -61,18 +67,27 @@
 
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/fabProfile"
+                    android:id="@+id/filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
-                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:tint="@color/letter_medium_emphasis"
+                    app:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_filter_list_black_24dp" />
+
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
                     android:tint="@color/letter_medium_emphasis"
                     app:backgroundTint="@android:color/transparent"
                     app:srcCompat="@drawable/ic_settings_black_24dp" />
 
-                </LinearLayout>
+            </LinearLayout>
 
-
+            </androidx.cardview.widget.CardView>
 
 
         </FrameLayout>

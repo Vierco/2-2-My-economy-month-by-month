@@ -1,9 +1,9 @@
 package com.sergio.alvarez.mieconomia
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.sergio.alvarez.mieconomia.App.Companion.appContext
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
 import com.sergio.alvarez.mieconomia.PreferenceHelper.firstRun
 import com.sergio.alvarez.mieconomia.databinding.ActivityMainBinding
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun cambioALogin() {
-        startActivity<LoginAdvice>()
+        startActivity<Auth>()
         finish()
     }
 
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun openingChecks() {
 
-        if (!prefs.firstRun){
+        if (!prefs.firstRun) {
             cambioAhome()
         }
 
@@ -59,21 +59,15 @@ class MainActivity : AppCompatActivity() {
 
             if (vb.btNext.text == resources.getString(R.string.st_start)) {
 
-                prefs.firstRun = false
-
                 cambioALogin()
 
             } else {
 
-                vb.viewFlipper.setInAnimation(
-                    App.applicationContext(),
-                    R.anim.view_flipper_slide_in_right
-                )
-                vb.viewFlipper.setOutAnimation(
-                    App.applicationContext(),
-                    R.anim.view_flipper_slide_out_left
-                )
-                vb.viewFlipper.showNext()
+                with(vb.viewFlipper) {
+                    setInAnimation(appContext, R.anim.view_flipper_slide_in_right)
+                    setOutAnimation(appContext, R.anim.view_flipper_slide_out_left)
+                    showNext()
+                }
                 checkVisibilities()
 
             }
@@ -81,9 +75,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         vb.btPrev.setOnClickListener {
-            vb.viewFlipper.setInAnimation(App.applicationContext(), android.R.anim.slide_in_left)
-            vb.viewFlipper.setOutAnimation(App.applicationContext(), android.R.anim.slide_out_right)
-            vb.viewFlipper.showPrevious()
+
+            with(vb.viewFlipper) {
+                setInAnimation(appContext, android.R.anim.slide_in_left)
+                setOutAnimation(appContext, android.R.anim.slide_out_right)
+                showPrevious()
+            }
             checkVisibilities()
 
         }

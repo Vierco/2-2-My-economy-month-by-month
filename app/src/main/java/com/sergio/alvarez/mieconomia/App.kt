@@ -10,9 +10,10 @@ class App : Application() {
     companion object {
         lateinit var instance: Application
         lateinit var res: Resources
+        lateinit var appContext: Context
 
         fun applicationContext() : Context {
-            return instance!!.applicationContext
+            return instance.applicationContext
         }
     }
 
@@ -23,6 +24,6 @@ class App : Application() {
         instance = this
         res = resources
 
-        val context: Context = App.applicationContext()
+        appContext = applicationContext()
     }
 }

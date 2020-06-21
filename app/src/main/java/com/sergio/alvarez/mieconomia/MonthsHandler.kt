@@ -17,86 +17,86 @@ class MonthsHandler {
                 when (v.id) {
                     R.id.ch_jan -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_jan))
+                            listOfMonths.add(res.getString(R.string.month_jan))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_jan))
+                            listOfMonths.remove(res.getString(R.string.month_jan))
                         }
                     }
                     R.id.ch_feb -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_feb))
+                            listOfMonths.add(res.getString(R.string.month_feb))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_feb))
+                            listOfMonths.remove(res.getString(R.string.month_feb))
                         }
                     }
                     R.id.ch_mar -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_mar))
+                            listOfMonths.add(res.getString(R.string.month_mar))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_mar))
+                            listOfMonths.remove(res.getString(R.string.month_mar))
                         }
                     }
                     R.id.ch_apr -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_apr))
+                            listOfMonths.add(res.getString(R.string.month_apr))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_apr))
+                            listOfMonths.remove(res.getString(R.string.month_apr))
                         }
                     }
                     R.id.ch_may -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_may))
+                            listOfMonths.add(res.getString(R.string.month_may))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_may))
+                            listOfMonths.remove(res.getString(R.string.month_may))
                         }
                     }
                     R.id.ch_jun -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_jun))
+                            listOfMonths.add(res.getString(R.string.month_jun))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_jun))
+                            listOfMonths.remove(res.getString(R.string.month_jun))
                         }
                     }
                     R.id.ch_jul -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_jul))
+                            listOfMonths.add(res.getString(R.string.month_jul))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_jul))
+                            listOfMonths.remove(res.getString(R.string.month_jul))
                         }
                     }
                     R.id.ch_aug -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_aug))
+                            listOfMonths.add(res.getString(R.string.month_aug))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_aug))
+                            listOfMonths.remove(res.getString(R.string.month_aug))
                         }
                     }
                     R.id.ch_sep -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_sep))
+                            listOfMonths.add(res.getString(R.string.month_sep))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_sep))
+                            listOfMonths.remove(res.getString(R.string.month_sep))
                         }
                     }
                     R.id.ch_oct -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_oct))
+                            listOfMonths.add(res.getString(R.string.month_oct))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_oct))
+                            listOfMonths.remove(res.getString(R.string.month_oct))
                         }
                     }
                     R.id.ch_nov -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_nov))
+                            listOfMonths.add(res.getString(R.string.month_nov))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_nov))
+                            listOfMonths.remove(res.getString(R.string.month_nov))
                         }
                     }
                     R.id.ch_dec -> {
                         if (checked) {
-                            listOfMonths.add(res.getString(R.string.m_dec))
+                            listOfMonths.add(res.getString(R.string.month_dec))
                         } else {
-                            listOfMonths.remove(res.getString(R.string.m_dec))
+                            listOfMonths.remove(res.getString(R.string.month_dec))
                         }
                     }
                 }
@@ -104,19 +104,18 @@ class MonthsHandler {
         }
 
         fun addAllMonths() {
-            inf("fun addAllMonths")
-            listOfMonths.add(res.getString(R.string.m_jan))
-            listOfMonths.add(res.getString(R.string.m_feb))
-            listOfMonths.add(res.getString(R.string.m_mar))
-            listOfMonths.add(res.getString(R.string.m_apr))
-            listOfMonths.add(res.getString(R.string.m_may))
-            listOfMonths.add(res.getString(R.string.m_jun))
-            listOfMonths.add(res.getString(R.string.m_jul))
-            listOfMonths.add(res.getString(R.string.m_aug))
-            listOfMonths.add(res.getString(R.string.m_sep))
-            listOfMonths.add(res.getString(R.string.m_oct))
-            listOfMonths.add(res.getString(R.string.m_nov))
-            listOfMonths.add(res.getString(R.string.m_dec))
+            listOfMonths.add(res.getString(R.string.month_jan))
+            listOfMonths.add(res.getString(R.string.month_feb))
+            listOfMonths.add(res.getString(R.string.month_mar))
+            listOfMonths.add(res.getString(R.string.month_apr))
+            listOfMonths.add(res.getString(R.string.month_may))
+            listOfMonths.add(res.getString(R.string.month_jun))
+            listOfMonths.add(res.getString(R.string.month_jul))
+            listOfMonths.add(res.getString(R.string.month_aug))
+            listOfMonths.add(res.getString(R.string.month_sep))
+            listOfMonths.add(res.getString(R.string.month_oct))
+            listOfMonths.add(res.getString(R.string.month_nov))
+            listOfMonths.add(res.getString(R.string.month_dec))
         }
 
     }

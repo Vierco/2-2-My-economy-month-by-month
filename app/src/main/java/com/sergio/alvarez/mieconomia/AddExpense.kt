@@ -1,16 +1,20 @@
 package com.sergio.alvarez.mieconomia
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEach
+import androidx.core.widget.doAfterTextChanged
+import com.sergio.alvarez.mieconomia.GlobalVar.Companion.card_image_number
+import com.sergio.alvarez.mieconomia.GlobalVar.Companion.generalExpensesList
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
 import com.sergio.alvarez.mieconomia.MonthsHandler.Companion.addAllMonths
 import com.sergio.alvarez.mieconomia.MonthsHandler.Companion.listOfMonths
 import com.sergio.alvarez.mieconomia.MonthsHandler.Companion.months
 import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
 import com.sergio.alvarez.mieconomia.databinding.ActivityAddExpenseBinding
-import com.sergio.alvarez.model.Expenses
+import com.sergio.alvarez.model.ExpenseItem
 import me.rishabhkhanna.customtogglebutton.CustomToggleButton
 import kotlin.properties.Delegates
 
@@ -23,6 +27,8 @@ class AddExpense : AppCompatActivity() {
     private lateinit var amount: String
     private var currentAmount by Delegates.notNull<Double>()
 
+    companion object {var expenseForThisMonth = true}
+
     private val userId = prefs.user_id
 
     fun clickOnMonth(v: View) {
@@ -30,12 +36,11 @@ class AddExpense : AppCompatActivity() {
         months(v)
     }
 
-    private fun checkCheckBox() { if (vb.selectAll.isChecked) vb.selectAll.isChecked = false
-    inf("click")}
+    private fun checkCheckBox() {
+        if (vb.selectAll.isChecked) vb.selectAll.isChecked = false
+    }
 
     private fun selectAll(value: Boolean) {
-
-        inf("fun selectAll con boolean $value")
 
         if (value) addAllMonths()
 
@@ -52,38 +57,73 @@ class AddExpense : AppCompatActivity() {
 
         vb.scrollingBackground.start()
 
+        with(vb.fieldInputPayDay) {
+            this.doAfterTextChanged {
+                val value = this.text.toString()
+                if (value != "") {
+                    if (value.toInt() > 31) {
+                        toast(resources.getString(R.string.invalid_day))
+                        this.text?.clear()
+                    }
+                }
+            }
+        }
+
+
         vb.selectAll.setOnClickListener {
 
             listOfMonths.clear()
 
             if (vb.selectAll.isChecked) {
-                ver("ON")
                 selectAll(true)
             } else {
                 selectAll(false)
-                err("OFF")
             }
         }
 
-        vb.btSave.setOnClickListener {
+        vb.selectImage.setOnClickListener {
+            val intent = Intent(this, ChooseImageForExpense::class.java)
+            startActivity(intent)
+            onPause()
+        }
 
-            inf(listOfMonths.toString())
+        vb.btSave.setOnClickListener {
 
             concept = vb.fieldInputConcept.text.toString()
             payday = vb.fieldInputPayDay.text.toString()
             notes = vb.fieldInputNotes.text.toString()
             amount = vb.fieldInputAmount.text.toString()
-            currentAmount = amount.toDouble()
 
-            if(concept.isNotEmpty() && payday.isNotEmpty()){
 
-                val current_expense = Expenses(concept, roundDecimals(currentAmount), listOfMonths, payday.toInt(), notes)
+            if (concept.isNotEmpty() && payday.isNotEmpty() && amount.isNotEmpty() && listOfMonths.isNotEmpty()) {
+
+                currentAmount = amount.toDouble()
+
+                val enumtype: ExpenseItem.Type =
+                    if (listOfMonths.size == 12) ExpenseItem.Type.RECURRENT else ExpenseItem.Type.VARIABLE
+
+                val currentExpense = ExpenseItem(
+                    concept,
+                    amount,
+                    listOfMonths,
+                    enumtype,
+                    card_image_number,
+                    payday.toInt(),
+                    notes
+                )
+
+                updateGeneralExpensesList(currentExpense)
+
+                saveExpensesStatus(generalExpensesList)
 
                 if (userId != null) {
-                    GlobalVar.database.child(resources.getString(R.string.word_user)).child(low(userId)).child(resources.getString(R.string.word_expenses)).child(low(concept.replace(" ","_"))).setValue(current_expense)
+                    val conceptToSend = low(concept.replace(" ", "_"))
+
+                    dbAddExpense(conceptToSend, currentExpense)
+
                 }
 
-                toast(resources.getString(R.string.setExpanseOk))
+                expenseForThisMonth = listOfMonths.contains(getMonth())
 
                 listOfMonths.clear()
 
@@ -94,6 +134,13 @@ class AddExpense : AppCompatActivity() {
             }
 
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if (card_image_number != 0) vb.selectImage.imageCardAssignation(card_image_number)
+
     }
 }
 

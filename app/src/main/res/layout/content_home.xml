@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/primary"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Home"
     tools:showIn="@layout/activity_home">
@@ -33,8 +33,9 @@
             android:fontFamily="@font/poppins_medium"
             android:paddingStart="@dimen/between_letters"
             android:text="@string/zero"
-            android:textColor="@color/primary_dark"
-            android:textSize="@dimen/letters_medium" />
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_medium"
+            tools:ignore="RtlSymmetry" />
 
         <TextView
             android:id="@+id/tv_badge"
@@ -42,9 +43,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:paddingStart="@dimen/between_letters"
-            android:text="@string/badge"
-            android:textColor="@color/primary_dark"
-            android:textSize="@dimen/letters_medium" />
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_medium"
+            tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
 
@@ -66,16 +67,18 @@
             android:textSize="@dimen/letters_medium" />
 
         <TextView
+            android:id="@+id/accounts_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:paddingStart="@dimen/between_letters"
             android:text="@string/_not_set"
             android:textColor="@color/orange"
-            android:textSize="@dimen/letters_medium" />
+            android:textSize="@dimen/letters_medium"
+            tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/tv_in_bank"
+            android:id="@+id/symbol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
@@ -83,23 +86,141 @@
             android:textColor="@color/primary_dark"
             android:textSize="@dimen/letters_medium"
             android:visibility="gone"
-            tools:text="$" />
+            tools:text="$"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginEnd="@dimen/text_margin"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/available_amount"
+            android:textColor="@color/letter_high_emphasis"
+            android:textSize="@dimen/letters_medium" />
+
+        <TextView
+            android:id="@+id/amount_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/between_letters"
+            android:text="@string/_not_set"
+            android:textColor="@color/green"
+            android:textSize="@dimen/letters_medium"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/symbolAvailable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/between_letters"
+            android:textColor="@color/green"
+            android:textSize="@dimen/letters_medium"
+            tools:text="$"
+            tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
 
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerExpenses"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:clipToPadding="true"
-        android:padding="@dimen/standard_margin"
-        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        app:spanCount="2"
-        tools:listitem="@layout/expense_card" />
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerExpenses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clipToPadding="true"
+            android:padding="@dimen/standard_margin"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/expense_card" />
+
+
+        <LinearLayout
+            android:id="@+id/emptyExpenses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/standard_margin"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/vc_create" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/good_moment"
+                android:textColor="@color/letter_medium_emphasis"
+                android:textSize="@dimen/letters_medium" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/yoga"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/standard_margin"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/vc_yoga" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/alldone"
+                android:textColor="@color/letter_medium_emphasis"
+                android:textSize="@dimen/letters_medium" />
+
+
+        </LinearLayout>
+
+
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:progressTint="@color/primary_dark"
+            android:visibility="gone" />
+
+    </FrameLayout>
 
 
 </LinearLayout>

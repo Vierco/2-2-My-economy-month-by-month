@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <FrameLayout
@@ -38,6 +38,8 @@
                 android:textColor="@color/primary"
                 android:textSize="@dimen/letters_gigantic" />
         </FrameLayout>
+
+
 
 
 
@@ -82,6 +84,36 @@
                         android:fontFamily="@font/poppins_medium" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/selectImage"
+                        android:textColor="@color/letter_medium_emphasis"
+                        android:textSize="@dimen/letters_small" />
+
+                    <ImageView
+                        android:id="@+id/selectImage"
+                        android:layout_marginEnd="@dimen/standard_margin"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/card_default"/>
+
+
+                </LinearLayout>
 
                 <!-- Months ....................... -->
 
