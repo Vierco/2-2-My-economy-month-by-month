@@ -14,6 +14,8 @@ Con minSDK **API 26** - Android 8 OREO
 
 Backend contruido con [Firebase](https://firebase.google.com/) services.
 
+![Build](https://sergioalvarez.dev/github/buildfirebase.png)
+
 En caso de que vayas a clonar y compilar este proyecto, recuerda generar tu propio fichero [**google-services.json**](https://support.google.com/firebase/answer/7015592?hl=en) para la conexión del backend.
 
 Bajo licencia [Creative Commons BY-NC License 4.0 Internacional](https://creativecommons.org/licenses/by-nc/4.0/legalcode.es)
