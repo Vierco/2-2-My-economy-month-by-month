@@ -1,6 +1,6 @@
 ![Cover](https://sergioalvarez.dev/github/cover22.png)
 
-# My economy for dummies
+# 2+2 My economy month by month
 
 Este es un proyecto de [Sergio Álvarez - Vierco](https://www.sergioalvarez.dev)
 
