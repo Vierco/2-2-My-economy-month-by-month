@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.sergio.alvarez.adapters.ExpensesAdapter
 import com.sergio.alvarez.mieconomia.AddExpense.Companion.expenseForThisMonth
+import com.sergio.alvarez.mieconomia.AddExpense.Companion.listHasBeenModified
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.EXPENSE_ID
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.database
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.generalExpensesList
@@ -25,8 +26,8 @@ import com.sergio.alvarez.mieconomia.GlobalVar.Companion.pendingPayments
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.updatingPendingPayments
 import com.sergio.alvarez.mieconomia.PreferenceHelper.accountActive
-import com.sergio.alvarez.mieconomia.PreferenceHelper.firstRun
 import com.sergio.alvarez.mieconomia.PreferenceHelper.first_day
+import com.sergio.alvarez.mieconomia.PreferenceHelper.first_run
 import com.sergio.alvarez.mieconomia.PreferenceHelper.inAccount
 import com.sergio.alvarez.mieconomia.PreferenceHelper.last_monthly_update
 import com.sergio.alvarez.mieconomia.PreferenceHelper.openingCounter
@@ -36,6 +37,7 @@ import com.sergio.alvarez.mieconomia.databinding.ActivityHomeBinding
 import com.sergio.alvarez.mieconomia.databinding.ConfirmResetBinding
 import com.sergio.alvarez.mieconomia.databinding.DeleteFromDbBinding
 import com.sergio.alvarez.model.ExpenseItem
+import kotlinx.android.synthetic.main.content_home.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -136,9 +138,6 @@ class Home : AppCompatActivity() {
             loadAndShowExpenses()
         }
 
-
-        vb.tvMonth.text = getMonth()
-
     }
 
     private fun openingChecks() {
@@ -159,15 +158,14 @@ class Home : AppCompatActivity() {
 
     private fun showImageForEmptyList() {
 
-        database.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
+        database
+            .child(App.res.getString(R.string.word_user))
+            .child(prefs.user_id.toString())
+            .child("expenses")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val nameToLowerCase: String = userId?.toLowerCase(Locale.ROOT).toString()
-                val ascertaiment: Any? = dataSnapshot.child(resources.getString(R.string.word_user))
-                    .child(nameToLowerCase).child(resources.getString(R.string.word_expenses)).value
-
-                with(vb.includes) {
-                    if (ascertaiment != null) {
+                    if (dataSnapshot.exists()) {
                         yoga.visibility = View.VISIBLE
                         emptyExpenses.visibility = View.GONE
                         recyclerExpenses.visibility = View.GONE
@@ -178,15 +176,11 @@ class Home : AppCompatActivity() {
 
                 }
 
-                vb.includes.loading.visibility = View.GONE
-
+                override fun onCancelled(error: DatabaseError) {
+                    toast(resources.getString(R.string.connection_error))
+                }
             }
-
-            override fun onCancelled(error: DatabaseError) {
-                toast(resources.getString(R.string.connection_error))
-            }
-        }
-        )
+            )
     }
 
     private fun checkEmptyList() {
@@ -356,35 +350,41 @@ class Home : AppCompatActivity() {
 
         adapter.notifyDataSetChanged()
 
-        database.addListenerForSingleValueEvent(object :
-            ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
+        database
+            .child(App.res.getString(R.string.word_user))
+            .child(prefs.user_id.toString())
+            .child("expenses")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val path = dataSnapshot.child(App.res.getString(R.string.word_user))
-                    .child(prefs.user_id.toString()).child("expenses").children
+                    val uno: Boolean = dataSnapshot.exists()
 
-                for (snapshot in path) {
+                    if (uno) {
+                        for (snapshot in dataSnapshot.children) {
 
-                    val exp = snapshot.getValue(ExpenseItem::class.java)
-                    if (exp?.months!!.contains(month)) {
+                            val exp = snapshot.getValue(ExpenseItem::class.java)
+                            if (exp?.months!!.contains(month)) {
 
-                        updateGeneralExpensesList(exp)
+                                updateGeneralExpensesList(exp)
+
+                            }
+
+                            saveExpensesStatus(generalExpensesList)
+
+                        }
+                        loadAndShowExpenses()
+                    } else {
+                        vb.includes.loading.visibility = View.GONE
+                        emptyExpenses.visibility = View.VISIBLE
+                        recyclerExpenses.visibility = View.GONE
 
                     }
-
-                    saveExpensesStatus(generalExpensesList)
-
                 }
 
-
-                loadAndShowExpenses()
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Cancelar")
-            }
-        })
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Cancelar")
+                }
+            })
     }
 
     private fun reloadList() {
@@ -409,10 +409,11 @@ class Home : AppCompatActivity() {
         vb = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(vb.root)
 
+        vb.tvMonth.text = getMonth()
         vb.includes.loading.visibility = View.VISIBLE
 
-        if (prefs.firstRun) {
-            prefs.firstRun = false
+        if (prefs.first_run) {
+            prefs.first_run = false
 
             resetGeneralExpensesList()
 
@@ -484,17 +485,25 @@ class Home : AppCompatActivity() {
 
             3 -> { // add a expense
 
-                if (expenseForThisMonth) {
-                    if (generalExpensesList.size == 0) {
-                        reloadList()
-                    } else {
-                        toast(resources.getString(R.string.setExpanseOk))
-                        calculateQuantities()
-                        checkEmptyList()
+                if (listHasBeenModified) {
 
+                    if (expenseForThisMonth) {
+
+                        when (generalExpensesList.size) {
+                            0 -> reloadList()
+                            1 -> checkEmptyList()
+                            else -> {
+                                updateExpenses(0)
+                            }
+                        }
+                    } else {
+                        toast(
+                            resources.getString(R.string.setExpanseOkNotThisMonth),
+                            Toast.LENGTH_LONG
+                        )
                     }
-                } else {
-                    toast(resources.getString(R.string.setExpanseOkNotThisMonth), Toast.LENGTH_LONG)
+
+                    listHasBeenModified = false
                 }
             }
 

@@ -13,6 +13,7 @@ import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
 import com.sergio.alvarez.mieconomia.PreferenceHelper.accountActive
 import com.sergio.alvarez.mieconomia.PreferenceHelper.defaultPreference
 import com.sergio.alvarez.mieconomia.PreferenceHelper.first_day
+import com.sergio.alvarez.mieconomia.PreferenceHelper.first_run
 import com.sergio.alvarez.mieconomia.PreferenceHelper.inAccount
 import com.sergio.alvarez.mieconomia.PreferenceHelper.pendingPayments
 import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
@@ -48,6 +49,7 @@ class Settings : AppCompatActivity() {
             val defaultPrefs = defaultPreference(this)
 
             with(prefs) {
+                first_run = defaultPrefs.first_run
                 user_id = defaultPrefs.user_id
                 first_day = defaultPrefs.first_day
                 first_day = defaultPrefs.first_day

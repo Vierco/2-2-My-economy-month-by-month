@@ -39,7 +39,7 @@ class SetGuestId : AppCompatActivity() {
 
                     prefs.user_id = name
 
-                    val user = User(name, getDate(), getMilliseconds(), getRandomString(20))
+                    val user = User(name, "",getDate(), getMilliseconds(), getRandomString(20))
 
                     dbAddGuestUser(nameToLowerCase, user)
 

@@ -43,7 +43,7 @@ object PreferenceHelper {
         }
     }
 
-    var SharedPreferences.firstRun
+    var SharedPreferences.first_run
         get() = getBoolean(FIRST_RUN, true)
         set(value) {
             editMe {

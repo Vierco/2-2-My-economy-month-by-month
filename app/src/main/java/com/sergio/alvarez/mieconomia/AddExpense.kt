@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEach
 import androidx.core.widget.doAfterTextChanged
+import com.google.firebase.auth.FirebaseAuth
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.card_image_number
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.generalExpensesList
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
@@ -27,7 +28,10 @@ class AddExpense : AppCompatActivity() {
     private lateinit var amount: String
     private var currentAmount by Delegates.notNull<Double>()
 
-    companion object {var expenseForThisMonth = true}
+    companion object {
+        var expenseForThisMonth = true
+        var listHasBeenModified = false
+    }
 
     private val userId = prefs.user_id
 
@@ -99,12 +103,16 @@ class AddExpense : AppCompatActivity() {
 
                 currentAmount = amount.toDouble()
 
+                val userUid = FirebaseAuth.getInstance().currentUser?.uid
+
                 val enumtype: ExpenseItem.Type =
                     if (listOfMonths.size == 12) ExpenseItem.Type.RECURRENT else ExpenseItem.Type.VARIABLE
+
 
                 val currentExpense = ExpenseItem(
                     concept,
                     amount,
+                    userUid,
                     listOfMonths,
                     enumtype,
                     card_image_number,
@@ -127,6 +135,8 @@ class AddExpense : AppCompatActivity() {
 
                 listOfMonths.clear()
 
+                listHasBeenModified = true
+
                 finish()
 
             } else {
@@ -142,6 +152,8 @@ class AddExpense : AppCompatActivity() {
         if (card_image_number != 0) vb.selectImage.imageCardAssignation(card_image_number)
 
     }
+
+
 }
 
 

@@ -15,6 +15,8 @@ class GlobalVar {
 
         var generalExpensesList: MutableList<ExpenseItem> = mutableListOf()
 
+        var bridgeList: MutableList<ExpenseItem> = mutableListOf()
+
         val months = mapOf(
             1 to res.getString(R.string.month_jan),
             2 to res.getString(R.string.month_feb),

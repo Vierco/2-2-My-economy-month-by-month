@@ -12,7 +12,7 @@ android {
         minSdkVersion 28
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,7 +50,7 @@ dependencies {
 
     implementation 'com.google.android:flexbox:2.0.1'
     implementation 'com.google.android.material:material:1.1.0'
-    implementation 'com.google.firebase:firebase-database:19.3.0'
+    implementation 'com.google.firebase:firebase-database:19.3.1'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.github.sephiroth74:NumberSlidingPicker:v1.0.3'
 

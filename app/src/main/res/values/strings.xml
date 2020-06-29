@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My economy</string>
+    <string name="app_name">2+2 My economy</string>
 
     <!-- Buttons -->
     <string name="st_prev">Anterior</string>
@@ -47,7 +47,6 @@
     <string name="fields_not_match">Los campos no coinciden</string>
     <string name="accept">Aceptar</string>
     <string name="isAlreadyInUse">Este nombre de usuario ya está siendo utilizado</string>
-    <string name="setExpanseOk">Movimiento registrado con éxito</string>
     <string name="setEmailOk">email registrado con éxito</string>
     <string name="db_unknown_email">unknown_email</string>
     <string name="connection_error">Oops... error de conexión</string>
@@ -129,6 +128,8 @@
     <string name="minimal_eight_for_pass">mínimo ocho caracteres para la contraseña</string>
     <string name="noInternet">No se encuentra conexión a internet</string>
     <string name="userAlreadyExists">Este usuario ya está siendo utilizado</string>
+    <string name="userNotExists">El usuario no existe</string>
+    <string name="wrongPass">Contraseña incorrecta</string>
     <string name="settings">Configuración</string>
     <string name="firstDay">¿Qué día quieres que empiece tu mes?</string>
     <string name="showAccount">Mostrar cantidad en cuenta</string>
@@ -150,7 +151,7 @@
     <string name="lib_toggle">Rishabhk07 / Custom-Toggle-Button\nhttps://github.com/rishabhk07/custom-toggle-button</string>
     <string name="confirm_reset">¿Quieres reiniciar la lista de gastos de este mes?</string>
     <string name="reset">Reiniciar</string>
-    <string name="setExpanseOkNotThisMonth">Resgistrado con éxito\nNo incluido en el mes actual</string>
+    <string name="setExpanseOkNotThisMonth">Registrado con éxito\nNo incluido en el mes actual</string>
     <string name="version">Version 0.1.0</string>
 
 

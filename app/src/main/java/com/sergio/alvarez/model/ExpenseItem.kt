@@ -4,6 +4,7 @@ package com.sergio.alvarez.model
 class ExpenseItem(
     var concept: String? = null,
     val amount: String? = null,
+    val author: String? = null,
     val months: List<String>? = null,
     val type: Type? = null,
     val cards_image: Int? = null,

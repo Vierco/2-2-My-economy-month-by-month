@@ -36,7 +36,10 @@ class Auth : AppCompatActivity() {
 
         when (errorMessage) {
             "There is no user record corresponding to this identifier. The user may have been deleted." -> toast(
-                resources.getString(R.string.userAlreadyExists)
+                resources.getString(R.string.userNotExists)
+            )
+            "The password is invalid or the user does not have a password." -> toast(
+                resources.getString(R.string.wrongPass)
             )
             "The email address is badly formatted." -> {
                 vb.fieldInputEmail.error = resources.getString(R.string.invalid_format)
@@ -124,7 +127,7 @@ class Auth : AppCompatActivity() {
         val modifiedUser = email.replace(".", "_")
 
         prefs.user_id = modifiedUser
-        val user = User(modifiedUser, getDate(), getMilliseconds(), getRandomString(20))
+        val user = User(modifiedUser, "", getDate(), getMilliseconds(), getRandomString(20))
         dbAddUser(modifiedUser, user)
 
         startActivity<Home>()

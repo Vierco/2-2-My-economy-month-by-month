@@ -5,7 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.sergio.alvarez.mieconomia.App.Companion.appContext
 import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.PreferenceHelper.firstRun
+import com.sergio.alvarez.mieconomia.PreferenceHelper.first_run
 import com.sergio.alvarez.mieconomia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun openingChecks() {
 
-        if (!prefs.firstRun) {
+        if (!prefs.first_run) {
             cambioAhome()
         }
 
