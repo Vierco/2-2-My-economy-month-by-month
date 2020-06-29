@@ -42,7 +42,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.*
 
 
 class Home : AppCompatActivity() {
@@ -50,7 +49,6 @@ class Home : AppCompatActivity() {
 
     private lateinit var vb: ActivityHomeBinding
     private lateinit var conceptToRemove: String
-    private val userId = prefs.user_id
 
     private val adapter = ExpensesAdapter { expenseItem: ExpenseItem, longClick: Boolean ->
 

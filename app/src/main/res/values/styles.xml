@@ -3,7 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppTheme.Base"/>
 
-    <style name="AppTheme.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+<!--    <style name="AppTheme.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">   darkmode -->
+    <style name="AppTheme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/primary</item>
@@ -23,7 +24,8 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.Dialog" parent="Theme.AppCompat.DayNight.Dialog">
+<!--    <style name="AppTheme.Dialog" parent="Theme.AppCompat.DayNight.Dialog"> darkmode -->
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
         <item name="windowActionBar">false</item>

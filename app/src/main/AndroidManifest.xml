@@ -26,7 +26,7 @@
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".ChooseImageForExpense"
-            android:theme="@style/AppTheme.Dialog" /> <!-- android:theme="@style/Theme.AppCompat.DayNight.Dialog" /> -->
+            android:theme="@style/AppTheme.Dialog" /> <!-- android:theme="@style/Theme.AppCompat.DayNight.Dialog" /> darkmode -->
 
         <activity android:name=".AddExpense" />
         <activity android:name=".SetGuestId" />
