@@ -26,25 +26,26 @@ class SetGuestId : AppCompatActivity() {
 
     private fun checkUserInDataBase() {
 
-        database.addListenerForSingleValueEvent(object : ValueEventListener {
+        val nameToLowerCase = low(name.replace(".","_"))
+
+        database
+            .child(resources.getString(R.string.word_user))
+            .child(nameToLowerCase)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val nameToLowerCase = low(name)
+                val exist = dataSnapshot.exists()
 
-                val post: Any? = dataSnapshot.child("users").child(nameToLowerCase).value
-
-                if (post != null) {
+                if (exist) {
                     toast(resources.getString(R.string.isAlreadyInUse))
                 } else {
-
                     prefs.user_id = name
 
-                    val user = User(name, "",getDate(), getMilliseconds(), getRandomString(20))
+                    val user = User(name,getDate(), getMilliseconds(), getRandomString(20))
 
                     dbAddGuestUser(nameToLowerCase, user)
 
                     goToHome()
-
                 }
 
             }

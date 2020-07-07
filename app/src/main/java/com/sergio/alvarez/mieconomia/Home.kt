@@ -179,6 +179,8 @@ class Home : AppCompatActivity() {
                 }
             }
             )
+
+        vb.includes.loading.visibility = View.GONE
     }
 
     private fun checkEmptyList() {
@@ -486,6 +488,8 @@ class Home : AppCompatActivity() {
                 if (listHasBeenModified) {
 
                     if (expenseForThisMonth) {
+
+                        calculateQuantities()
 
                         when (generalExpensesList.size) {
                             0 -> reloadList()

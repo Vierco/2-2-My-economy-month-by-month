@@ -127,12 +127,10 @@ class Auth : AppCompatActivity() {
         val modifiedUser = email.replace(".", "_")
 
         prefs.user_id = modifiedUser
-        val user = User(modifiedUser, "", getDate(), getMilliseconds(), getRandomString(20))
+        val user = User(modifiedUser,getDate(), getMilliseconds(),getRandomString(20))
         dbAddUser(modifiedUser, user)
 
         startActivity<Home>()
-
-       // prefs.firstRun = false
 
         finishAffinity()
     }
@@ -143,8 +141,6 @@ class Auth : AppCompatActivity() {
         prefs.user_id = modifiedUser
 
         startActivity<Home>()
-
-       // prefs.firstRun = false
 
         finishAffinity()
     }
