@@ -12,7 +12,7 @@ Desarrollado para android con lenguaje Kotlin.
 
 Con minSDK **API 26** - Android 8 OREO
 
-Backend contruido con [Firebase](https://firebase.google.com/) services.
+Backend construido con [Firebase](https://firebase.google.com/) services.
 
 ![Build](https://sergioalvarez.dev/github/buildfirebase.png)
 
