@@ -1,9 +1,10 @@
-package com.sergio.alvarez.mieconomia
+package com.sergio.alvarez.providers
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import com.sergio.alvarez.mieconomia.App.Companion.appContext
+import com.sergio.alvarez.mieconomia.R
 
 object PreferenceHelper {
 
@@ -62,7 +63,10 @@ object PreferenceHelper {
 
 
     var SharedPreferences.user_id
-        get() = getString(USER_ID, appContext.getString(R.string.unknow))
+        get() = getString(
+            USER_ID, appContext.getString(
+                R.string.unknow
+            ))
         set(value) {
             editMe {
                 it.putString(USER_ID, value)

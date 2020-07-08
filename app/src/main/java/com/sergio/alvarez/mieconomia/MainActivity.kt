@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.sergio.alvarez.mieconomia.App.Companion.appContext
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.PreferenceHelper.first_run
+import com.sergio.alvarez.providers.GlobalVar.Companion.prefs
+import com.sergio.alvarez.providers.PreferenceHelper.first_run
 import com.sergio.alvarez.mieconomia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

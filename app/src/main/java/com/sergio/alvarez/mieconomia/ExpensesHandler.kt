@@ -9,8 +9,8 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.EXPENSE_ID
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.generalExpensesList
+import com.sergio.alvarez.providers.GlobalVar.Companion.EXPENSE_ID
+import com.sergio.alvarez.providers.GlobalVar.Companion.generalExpensesList
 import com.sergio.alvarez.mieconomia.databinding.ActivityExpensesHandlerBinding
 import com.sergio.alvarez.model.ExpenseItem
 import kotlinx.coroutines.Dispatchers

@@ -1,9 +1,11 @@
-package com.sergio.alvarez.mieconomia
+package com.sergio.alvarez.providers
 
 import com.sergio.alvarez.mieconomia.App.Companion.appContext
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.database
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
+import com.sergio.alvarez.providers.GlobalVar.Companion.database
+import com.sergio.alvarez.providers.GlobalVar.Companion.prefs
+import com.sergio.alvarez.providers.PreferenceHelper.user_id
+import com.sergio.alvarez.mieconomia.R
+import com.sergio.alvarez.mieconomia.low
 import com.sergio.alvarez.model.ExpenseItem
 import com.sergio.alvarez.model.User
 
@@ -23,7 +25,9 @@ fun dbRemoveExpense(concept: String) {
 
     database.child(appContext.resources.getString(R.string.word_user))
         .child(low(userId.toString()))
-        .child(appContext.getString(R.string.word_expenses)).child(low(concept))
+        .child(appContext.getString(R.string.word_expenses)).child(
+            low(concept)
+        )
         .removeValue()
 }
 

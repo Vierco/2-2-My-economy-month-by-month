@@ -7,15 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEach
 import androidx.core.widget.doAfterTextChanged
 import com.google.firebase.auth.FirebaseAuth
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.card_image_number
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.generalExpensesList
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.MonthsHandler.Companion.addAllMonths
-import com.sergio.alvarez.mieconomia.MonthsHandler.Companion.listOfMonths
-import com.sergio.alvarez.mieconomia.MonthsHandler.Companion.months
-import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
+import com.sergio.alvarez.providers.GlobalVar.Companion.card_image_number
+import com.sergio.alvarez.providers.GlobalVar.Companion.generalExpensesList
+import com.sergio.alvarez.providers.GlobalVar.Companion.prefs
+import com.sergio.alvarez.providers.MonthsHandler.Companion.addAllMonths
+import com.sergio.alvarez.providers.MonthsHandler.Companion.listOfMonths
+import com.sergio.alvarez.providers.MonthsHandler.Companion.months
+import com.sergio.alvarez.providers.PreferenceHelper.user_id
 import com.sergio.alvarez.mieconomia.databinding.ActivityAddExpenseBinding
 import com.sergio.alvarez.model.ExpenseItem
+import com.sergio.alvarez.providers.dbAddExpense
 import me.rishabhkhanna.customtogglebutton.CustomToggleButton
 import kotlin.properties.Delegates
 
@@ -127,7 +128,10 @@ class AddExpense : AppCompatActivity() {
                 if (userId != null) {
                     val conceptToSend = low(concept.replace(" ", "_"))
 
-                    dbAddExpense(conceptToSend, currentExpense)
+                    dbAddExpense(
+                        conceptToSend,
+                        currentExpense
+                    )
 
                 }
 

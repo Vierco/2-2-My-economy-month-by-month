@@ -1,4 +1,6 @@
-package com.sergio.alvarez.mieconomia
+package com.sergio.alvarez.providers
+
+import com.sergio.alvarez.mieconomia.R
 
 object drawingsProvider {
 

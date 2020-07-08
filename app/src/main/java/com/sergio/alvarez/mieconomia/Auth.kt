@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.auth
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
+import com.sergio.alvarez.providers.GlobalVar.Companion.auth
+import com.sergio.alvarez.providers.GlobalVar.Companion.prefs
+import com.sergio.alvarez.providers.PreferenceHelper.user_id
 import com.sergio.alvarez.mieconomia.databinding.ActivityAuthBinding
 import com.sergio.alvarez.model.User
+import com.sergio.alvarez.providers.dbAddUser
 
 class Auth : AppCompatActivity() {
 

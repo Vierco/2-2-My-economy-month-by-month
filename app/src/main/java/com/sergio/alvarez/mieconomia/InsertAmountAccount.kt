@@ -6,8 +6,8 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.PreferenceHelper.inAccount
+import com.sergio.alvarez.providers.GlobalVar.Companion.prefs
+import com.sergio.alvarez.providers.PreferenceHelper.inAccount
 import com.sergio.alvarez.mieconomia.databinding.ActivityInsertAmountAccountBinding
 
 class InsertAmountAccount : AppCompatActivity() {

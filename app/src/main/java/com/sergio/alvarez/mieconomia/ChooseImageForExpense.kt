@@ -7,8 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.sergio.alvarez.adapters.ImagesCardsAdapter
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.card_image_number
+import com.sergio.alvarez.providers.GlobalVar.Companion.card_image_number
 import com.sergio.alvarez.mieconomia.databinding.ActivityChooseImageForExpenseBinding
+import com.sergio.alvarez.providers.drawingsProvider
 
 class ChooseImageForExpense : AppCompatActivity() {
 

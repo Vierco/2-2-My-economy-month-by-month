@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.database
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.PreferenceHelper.user_id
+import com.sergio.alvarez.providers.GlobalVar.Companion.database
+import com.sergio.alvarez.providers.GlobalVar.Companion.prefs
+import com.sergio.alvarez.providers.PreferenceHelper.user_id
 import com.sergio.alvarez.mieconomia.databinding.ActivitySetGuestIdBinding
 import com.sergio.alvarez.model.User
+import com.sergio.alvarez.providers.dbAddGuestUser
 
 
 class SetGuestId : AppCompatActivity() {
@@ -43,7 +44,10 @@ class SetGuestId : AppCompatActivity() {
 
                     val user = User(name,getDate(), getMilliseconds(), getRandomString(20))
 
-                    dbAddGuestUser(nameToLowerCase, user)
+                    dbAddGuestUser(
+                        nameToLowerCase,
+                        user
+                    )
 
                     goToHome()
                 }

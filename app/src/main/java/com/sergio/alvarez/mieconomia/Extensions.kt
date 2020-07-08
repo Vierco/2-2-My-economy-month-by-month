@@ -15,11 +15,12 @@ import androidx.core.os.bundleOf
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.sergio.alvarez.mieconomia.App.Companion.res
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.generalExpensesList
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.prefs
-import com.sergio.alvarez.mieconomia.GlobalVar.Companion.tag
-import com.sergio.alvarez.mieconomia.PreferenceHelper.variable_list_expense
+import com.sergio.alvarez.providers.GlobalVar.Companion.generalExpensesList
+import com.sergio.alvarez.providers.GlobalVar.Companion.prefs
+import com.sergio.alvarez.providers.GlobalVar.Companion.tag
+import com.sergio.alvarez.providers.PreferenceHelper.variable_list_expense
 import com.sergio.alvarez.model.ExpenseItem
+import com.sergio.alvarez.providers.GlobalVar
 import java.lang.reflect.Type
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
